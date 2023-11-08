@@ -14,6 +14,6 @@ print("十倍交叉验证的准确率为", acc)
 clf.fit(X, y)
 acc = accuracy_score(y, clf.predict(X))
 
-print("模型准确率为", acc)
+print("SVM模型分类准确率为", acc)
 # 模型保存
 joblib.dump(clf, "svm_model.pkl")

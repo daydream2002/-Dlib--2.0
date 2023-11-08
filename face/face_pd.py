@@ -3,7 +3,7 @@ import cv2  # 图像处理的库OpenCv
 
 
 def face_pd(im_rd, a, b, c, d, dd, e):
-    cld = joblib.load("knn_model.pkl")  # 调用已经训练好的模型
+    cld = joblib.load("svm_model.pkl")  # 调用已经训练好的模型
     x = [[a, b, c, dd, e]]
     # 存储特征值
     # a-嘴巴宽度与识别框宽度之比
