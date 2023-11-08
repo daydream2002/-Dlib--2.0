@@ -1,6 +1,4 @@
 import dlib  # 人脸识别的库dlib
-import numpy as np  # 数据处理的库numpy
-import joblib
 import cv2  # 图像处理的库OpenCv
 
 
