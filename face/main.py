@@ -1,6 +1,16 @@
-import face_emotion
 import get_detector
 import learning_face
-if __name__ == "__main__":
-    get_detector.get_detector()
 
+
+class faceEmotion():
+    def get_detector(self):
+        get_detector.get_detector(self)
+
+    def learning_face(self):
+        learning_face.learning_face(self)
+
+
+if __name__ == "__main__":
+    face_emotion = faceEmotion()
+    face_emotion.get_detector()
+    face_emotion.learning_face()
