@@ -3,7 +3,7 @@ import cv2  # 图像处理的库OpenCv
 
 
 def face_pd(im_rd, a, b, c, d, dd, e):
-    cld = joblib.load("svm_model.pkl")  # 调用已经训练好的模型
+    cld = joblib.load("knn_model.pkl")  # 调用已经训练好的模型
     x = [[a, b, c, dd, e]]
     # 存储特征值
     # a-嘴巴宽度与识别框宽度之比
@@ -12,6 +12,7 @@ def face_pd(im_rd, a, b, c, d, dd, e):
     # e-眼睛睁开程度
     print(x)
     kll = int(cld.predict(x))  # 用训练好的KNN模型对获取的特征值进行分析分类，返回分类后的标签
+    print(kll)
     # 根据标签判断当前表情，并在图像上输出
     emo = ['angry', 'sadness', 'nature', 'nature', 'happy', 'normal', 'surprise']
     cv2.putText(im_rd, emo[kll - 1], (d.left(), d.bottom() + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.8,

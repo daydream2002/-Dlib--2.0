@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import cross_val_score
 
 # 读取数据集xlsx文件，利用pandas库根据列来分特征值和标签列
-df = pd.read_excel("../数据集/train_dataset3.xlsx", header=None)
+df = pd.read_excel("../数据集/数据.xlsx", header=None)
 X = df[df.columns[0:5]]
 y = df[df.columns[6]]
 # 给模型喂数据，调用Sklearn中的集成好的分类器函数

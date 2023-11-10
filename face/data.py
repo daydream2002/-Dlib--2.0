@@ -1,20 +1,22 @@
-#使用workbook方法，创建一个新的工作簿
+# 使用workbook方法，创建一个新的工作簿
 import cv2
 import xlwt
 import numpy as np
 import joblib
 import cv2  # 图像处理的库OpenCv
+
+
 def data(self):
     line_brow_x = []
     line_brow_y = []
     book = xlwt.Workbook(encoding='utf-8', style_compression=0)
-    #添加一个sheet，名字为mysheet
+    # 添加一个sheet，名字为mysheet
     sheet = book.add_sheet('mysheet', cell_overwrite_ok=True)
-    #遍历每张图片提取图片中人脸的特征值
-    path="D:\desktop\-Dlib--2.0\数据集\S005_001_00000009.png"
+    # 遍历每张图片提取图片中人脸的特征值
+    path = "D:\desktop\-Dlib--2.0\数据集\S005_001_00000009.png"
     print(path)
     im_rd = cv2.imread(path)
-    im_rd = cv2.resize(im_rd ,None,fx=2,fy=2,interpolation=cv2.INTER_CUBIC)
+    im_rd = cv2.resize(im_rd, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
     n = 0
     k = cv2.waitKey(1)
     img_gray = cv2.cvtColor(im_rd, cv2.COLOR_RGB2GRAY)
@@ -108,10 +110,10 @@ def data(self):
             # 分情况讨论
             # 张嘴，可能是开心或者惊讶
 
-            #人脸特征之眼高值的读入
-            print(a,b,c,d,dd,e,f)
+            # 人脸特征之眼高值的读入
+            print(a, b, c, d, dd, e, f)
             n = n + 1
-            #人脸特征值之眉毛倾斜程度的读入
-            #sheet.write(m,n,self.brow_k)
-            #保存xls工作簿
+            # 人脸特征值之眉毛倾斜程度的读入
+            # sheet.write(m,n,self.brow_k)
+            # 保存xls工作簿
             book.save()
