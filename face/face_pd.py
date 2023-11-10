@@ -10,6 +10,7 @@ def face_pd(im_rd, a, b, c, d, dd, e):
     # b-嘴巴高度与识别框高度之比
     # c-眉毛高度占比
     # e-眼睛睁开程度
+    print(x)
     kll = int(cld.predict(x))  # 用训练好的KNN模型对获取的特征值进行分析分类，返回分类后的标签
     # 根据标签判断当前表情，并在图像上输出
     emo = ['angry', 'sadness', 'nature', 'nature', 'happy', 'normal', 'surprise']
