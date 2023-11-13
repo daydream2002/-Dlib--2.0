@@ -3,10 +3,12 @@ from sklearn.svm import SVC
 import pandas as pd
 from sklearn.model_selection import cross_val_score
 import joblib
+from sklearn import preprocessing
 
 
-df = pd.read_excel("../数据集/train_dataset3.xlsx", header=None)
+df = pd.read_excel("../数据集/test_dataset2.xlsx", header=None)
 X = df[df.columns[0:6]]
+X = preprocessing.scale(X)
 y = df[df.columns[6]]
 clf = SVC(kernel='poly')
 acc = cross_val_score(clf, X, y, scoring='accuracy', cv=10).mean()
